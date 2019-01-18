@@ -192,8 +192,8 @@ void pomelo::publish_sellorder_if_needed(account_name account, asset bid, asset 
 void pomelo::buy(account_name account, asset bid, asset ask) 
 {
     
-    eosio_assert(bid.symbol == BOS, "Bid must be EOS");                                    // Validate bid symbol
-    eosio_assert(ask.symbol != BOS, "Ask must be non-EOS...");                             // Validate ask symbol
+    eosio_assert(bid.symbol == BOS, "Bid must be BOS");                                    // Validate bid symbol
+    eosio_assert(ask.symbol != BOS, "Ask must be non- BOS...");                             // Validate ask symbol
     eosio_assert(is_valid_unit_price(bid.amount, ask.amount), "Bid mod ask must be 0!!!"); // Validate unit price is integer
 
     uint64_t order_unit_price = bid.amount * PRICE_SCALE / ask.amount; // Calculate unit price  
